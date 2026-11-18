@@ -1092,6 +1092,9 @@ def run_full_pipeline(
 
         fy_end_month = 12
 
+        if skip_existing_consolidated and ticker in existing_tickers:
+            continue
+
         # 1. Extraction Consolidée (10-K + 10-Q + DEI)
         if not (skip_existing_consolidated and ticker in existing_tickers):
             if skip_existing_consolidated and cik in existing_ciks:
